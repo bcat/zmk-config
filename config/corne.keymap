@@ -5,18 +5,27 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define LOWER 1
 #define RAISE 2
 #define ADJST 3
 
+#define BT0 BT_SEL 0
+#define BT1 BT_SEL 1
+#define BT2 BT_SEL 2
+#define BT3 BT_SEL 3
+#define BT4 BT_SEL 4
+#define BTCLR BT_CLR
 #define CSPC LC(SPACE)
 #define MNXT C_NEXT
 #define MPLY C_PP
 #define MPRV C_PREV
 #define MSTP C_STOP
 #define MUTE C_MUTE
+#define OUTT OUT_TOG
 #define PAUSE PAUSE_BREAK
 #define VOLDN C_VOL_DN
 #define VOLUP C_VOL_UP
@@ -59,10 +68,10 @@
 
         adjust_layer {
             bindings = <
-                &trans    &trans    &kp MPLY  &kp VOLUP &kp MSTP  &trans                        &trans    &trans    &trans    &trans    &trans    &trans
-                &trans    &trans    &kp MPRV  &kp VOLDN &kp MNXT  &trans                        &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &kp MPLY  &kp VOLUP &kp MSTP  &trans                        &bt BTCLR &reset    &trans    &trans    &trans    &trans
+                &trans    &trans    &kp MPRV  &kp VOLDN &kp MNXT  &trans                        &bt BT0   &bt BT1   &bt BT2   &trans    &trans    &trans
                 &trans    &trans    &trans    &kp MUTE  &trans    &trans                        &trans    &trans    &trans    &trans    &trans    &trans
-                                                        &trans    &trans    &trans    &trans    &trans    &trans
+                                                        &trans    &trans    &trans    &out OUTT &trans    &trans
             >;
         };
     };
