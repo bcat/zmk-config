@@ -41,15 +41,13 @@
         // effectively disables keystrokes (e.g., for when the keyboard is in
         // storage or being transported).
         //
-        // We use a fairly long timeout (1 second) to prevent the unlock combo
-        // itself from being triggered accidentally.
-        //
         // If https://github.com/zmkfirmware/zmk/issues/405 is implemented,
         // this combo can be replaced by a native behavior in the future.
         combo_unlock {
-          timeout-ms = <1000>;
-          key-positions = <11 /* BSPC */ 37 /* LOWER */ 40 /* RAISE */>;
-          bindings = <&tog LOCK>;
+            timeout-ms = <200>;
+            key-positions = <11 /* BSPC */ 37 /* LOWER */ 40 /* RAISE */>;
+            bindings = <&tog LOCK>;
+            layers = <LOCK>;
         };
     };
 
@@ -85,7 +83,7 @@
 
         adjust_layer {
             bindings = <
-                &trans     &trans     &kp C_PP   &kp VOL_UP &kp C_STOP &trans                           &bt BT_CLR &reset     &trans     &trans     &trans     &trans
+                &trans     &trans     &kp C_PP   &kp VOL_UP &kp C_STOP &trans                           &bt BT_CLR &reset     &trans     &trans     &trans     &tog LOCK
                 &trans     &trans     &kp C_PREV &kp VOL_DN &kp C_NEXT &trans                           &bt BT0    &bt BT1    &bt BT2    &bt BT3    &bt BT4    &trans
                 &trans     &trans     &trans     &kp C_MUTE &trans     &trans                           &trans     &trans     &trans     &trans     &trans     &trans
                                                             &trans     &trans     &trans     &out O_TOG &trans     &trans
