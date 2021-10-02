@@ -90,16 +90,12 @@
             >;
         };
 
-        // Ideally, this layer would be completely empty, but as of June 2021,
-        // empty layers fail to compile due to
-        // https://github.com/zmkfirmware/zmk/issues/241. As such, we add no-op
-        // momentary layer keys to force compilation.
         lock_layer {
             bindings = <
-                &none      &none      &none      &none      &none      &none                            &none      &reset     &none      &none      &none      &none
                 &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
                 &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
-                                                            &none      &mo LOWER  &none      &mo RAISE  &none      &none
+                &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+                                                            &none      &none      &none      &none      &none      &none
             >;
         };
     };
