@@ -33,6 +33,10 @@
 
 #define O_TOG OUT_TOG
 
+&kscan0 {
+    debounce-period = <10>;
+};
+
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
